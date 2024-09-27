@@ -33,7 +33,7 @@ function searchByIngredient(ingredient) {
                             <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
                             <div class="card-body">
                                 <h5 class="card-title">${drink.strDrink}</h5>
-                                <button class="btn btn-primary" onclick="getCocktailDetails(${drink.idDrink})">Ver Detalles</button>
+                                <button class="btn btn-primary" onclick="getCocktailDetails('${drink.idDrink}')">Ver Detalles</button>
                             </div>
                         </div>
                     </div>
@@ -46,9 +46,12 @@ function searchByIngredient(ingredient) {
 
 // Función para obtener detalles del cóctel
 function getCocktailDetails(idDrink) {
+    console.log("Fetching details for drink ID:", idDrink); // Depuración
+
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
         .then(response => response.json())
         .then(data => {
+            console.log("Cocktail details fetched:", data); // Depuración
             const cocktail = data.drinks[0];
             const detailsDiv = document.getElementById('details');
             
