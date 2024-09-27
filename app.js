@@ -51,11 +51,24 @@ function getCocktailDetails(idDrink) {
         .then(data => {
             const cocktail = data.drinks[0];
             const detailsDiv = document.getElementById('details');
+            
+            // Obtener los ingredientes y las medidas del cóctel
+            let ingredientsList = '';
+            for (let i = 1; i <= 15; i++) {
+                const ingredient = cocktail[`strIngredient${i}`];
+                const measure = cocktail[`strMeasure${i}`];
+                if (ingredient) {
+                    ingredientsList += `<li>${measure ? measure : ''} ${ingredient}</li>`;
+                }
+            }
+
             detailsDiv.innerHTML = `
                 <h2>${cocktail.strDrink}</h2>
                 <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" style="max-width: 300px;">
                 <p><strong>Categoría:</strong> ${cocktail.strCategory}</p>
                 <p><strong>Instrucciones:</strong> ${cocktail.strInstructions}</p>
+                <p><strong>Ingredientes:</strong></p>
+                <ul>${ingredientsList}</ul>
             `;
         })
         .catch(error => console.log("Error fetching cocktail details:", error));
