@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Finder - Bar Edition</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación estilo bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cocktail Finder</a>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container mt-5 pt-5">
+        <!-- Sección de búsqueda -->
+        <div class="row mb-5">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center mb-4" style="color: #f39c12;">Buscar Cocteles</h1>
+                <form class="mb-4">
+                    <div class="mb-3">
+                        <label for="ingredient-select" class="form-label">Seleccionar Ingrediente</label>
+                        <select id="ingredient-select" class="form-select">
+                            <option value="">Selecciona un ingrediente</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" onclick="searchByIngredient(document.getElementById('ingredient-select').value)">Buscar por Ingrediente</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Resultados de búsqueda -->
+        <div id="results" class="row">
+            <!-- Los resultados de cócteles aparecerán aquí -->
+        </div>
+
+        <!-- Detalles del cóctel -->
+        <div id="details" class="mt-5"></div>
+
+        <!-- Detalles del ingrediente -->
+        <div id="ingredient-details" class="mt-5"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
