@@ -1,0 +1,69 @@
+/* Estilos generales para ambientar a un bar */
+body {
+    background-image: url('https://images.unsplash.com/photo-1552566626-52a30db2d1a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #f8f9fa;
+    padding-top: 70px;
+    font-family: 'Georgia', serif;
+}
+
+/* Barra de navegación estilo bar */
+.navbar {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-family: 'Cursive', sans-serif;
+    font-size: 1.8rem;
+    color: #f39c12 !important; /* Color dorado */
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f8f9fa;
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background-color: #e67e22;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #d35400;
+}
+
+/* Estilo de las tarjetas de cócteles */
+.cocktail-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cocktail-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cocktail-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de resultados */
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Fondo oscuro en los detalles */
+#details, #ingredient-details {
+    background-color: rgba(44, 44, 44, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
